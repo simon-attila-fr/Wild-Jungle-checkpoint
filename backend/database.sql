@@ -1,63 +1,55 @@
--- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
---
--- Client :  localhost
--- Généré le :  Jeu 26 Octobre 2017 à 13:53
--- Version du serveur :  5.7.19-0ubuntu0.16.04.1
--- Version de PHP :  7.0.22-0ubuntu0.16.04.1
+DROP DATABASE IF EXISTS greenshop;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+CREATE DATABASE greenshop
+    DEFAULT CHARACTER SET = 'utf8';
+
+USE greenshop;
+
+CREATE TABLE `user` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `full_name` varchar(255) NOT NULL
+) DEFAULT CHARACTER SET = 'utf8';
+
+CREATE TABLE `plant` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL ,
+  `category_id` int NOT NULL ,
+  `light` int DEFAULT 1,
+  `water` int DEFAULT 1,
+  `price` int NOT NULL
+) DEFAULT CHARACTER SET = 'utf8';
+
+CREATE TABLE `plant_user` (
+  `user_id` int NOT NULL ,
+  `plant_id` int NOT NULL
+) DEFAULT CHARACTER SET = 'utf8';
+
+CREATE TABLE `category` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL
+) DEFAULT CHARACTER SET = 'utf8';
+
+ALTER TABLE `plant_user` ADD FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+ALTER TABLE `plant_user` ADD FOREIGN KEY (`plant_id`) REFERENCES `plant` (`id`);
+
+ALTER TABLE `plant` ADD FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
---
--- Base de données :  `simple-mvc`
---
+INSERT INTO user (`full_name`) VALUES ("Karl"), ("Alice");
 
--- --------------------------------------------------------
 
---
--- Structure de la table `item`
---
+INSERT INTO category (name) VALUES ("Classique"),("Extérieur"), ('Plante grasse');
 
-CREATE TABLE `item` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `item`
---
-
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
-
---
--- Index pour les tables exportées
---
-
---
--- Index pour la table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `item`
---
-ALTER TABLE `item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO plant (name, `category_id`, light, water, price) VALUES
+  ("Monstera",1,2,3,15),
+  ("Ficus lyrata",1,3,1,16),
+  ("Pothos argenté",1,1,2,9),
+	("Calathea",1,2,3,20),
+  ("Olivier",2,3,1,25),
+	("Cactus",3,2,1,6),
+  ("Basilique",2,2,3,5),
+  ("Succulente",3,2,1,8),
+  ("Menthe",2,2,2,4);
