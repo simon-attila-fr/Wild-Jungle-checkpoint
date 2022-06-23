@@ -26,6 +26,10 @@ Let's start with the **backend**.
 4. You can test with Postman, Insomnia or Thunder that you get your plants from the database
 5. Plants have a category associated. So, in the plants collection, you need to have the name of that category. Write your own findAll() method in your PlantManager with an INNER JOIN to get the category name along with all plants.
 
+### I want a new plant!
+It's time to grow your collection.
+1. You will find a form already in place on the
+
 
 https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
 
