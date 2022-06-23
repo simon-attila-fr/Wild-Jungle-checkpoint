@@ -12,6 +12,8 @@ export default function PlantAdd() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Code de gestion de l'envoi du formulaire
   };
 
   return (

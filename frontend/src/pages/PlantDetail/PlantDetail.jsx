@@ -10,10 +10,10 @@ export default function PlantDetail() {
       </div>
 
       <div className="detail half">
-        <h1 className="plant_name">{/* Nom de la plante */}</h1>
+        <h1>{/* nom de la plante */}</h1>
 
         <div className="data">
-          <div className="category">Category :</div>
+          <div className="category">Category : {/* nom de la catégorie */}</div>
 
           <div className="light">
             Besoin en lumière : <Care type="sun" amount="" />
@@ -23,7 +23,7 @@ export default function PlantDetail() {
             Besoin en eau : <Care type="water" amount="" />
           </div>
 
-          <div className="price">Prix: €</div>
+          <div className="price">Prix: {/* prix */}€</div>
         </div>
 
         <div className="center">
