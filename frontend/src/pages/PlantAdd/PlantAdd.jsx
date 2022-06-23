@@ -2,14 +2,6 @@ import { useEffect, useState } from "react";
 import "./PlantAdd.css";
 
 export default function PlantAdd() {
-  const [form, setForm] = useState({
-    name: "",
-    category_id: 0,
-    water: "",
-    sun: "",
-    price: "",
-    image: "",
-  });
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -18,24 +10,8 @@ export default function PlantAdd() {
       .then((data) => setCategories(data));
   }, []);
 
-  const handleChange = (e) => {
-    const data = { ...form };
-    data[e.target.name] = e.target.value;
-
-    setForm(data);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/plants`, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(form),
-    });
   };
 
   return (
@@ -45,25 +21,12 @@ export default function PlantAdd() {
       <form className="plantadd_form" onSubmit={handleSubmit}>
         <label className="plantadd_label" htmlFor="name">
           Nom de la plante
-          <input
-            className="plantadd_input"
-            id="name"
-            name="name"
-            type="text"
-            value={form.name}
-            onChange={handleChange}
-          />
+          <input className="plantadd_input" id="name" name="name" type="text" />
         </label>
 
         <label className="plantadd_label" htmlFor="category">
           Catégorie
-          <select
-            className="plantadd_input"
-            name="category_id"
-            id="category"
-            value={form.category_id}
-            onChange={handleChange}
-          >
+          <select className="plantadd_input" name="category_id" id="category">
             <option value="0">Choisir une catégorie... </option>
             {categories.map((category) => (
               <option key={category.id} value={category.id}>
@@ -80,21 +43,12 @@ export default function PlantAdd() {
             id="water"
             name="water"
             type="number"
-            value={form.water}
-            onChange={handleChange}
           />
         </label>
 
         <label className="plantadd_label" htmlFor="sun">
           Besoin d'ensoleillement
-          <input
-            className="plantadd_input"
-            id="sun"
-            name="sun"
-            type="number"
-            value={form.sun}
-            onChange={handleChange}
-          />
+          <input className="plantadd_input" id="sun" name="sun" type="number" />
         </label>
 
         <label className="plantadd_label" htmlFor="price">
@@ -104,8 +58,6 @@ export default function PlantAdd() {
             id="price"
             name="price"
             type="number"
-            value={form.price}
-            onChange={handleChange}
           />
         </label>
 
@@ -116,8 +68,6 @@ export default function PlantAdd() {
             id="image"
             name="image"
             type="text"
-            value={form.image}
-            onChange={handleChange}
           />
         </label>
 
