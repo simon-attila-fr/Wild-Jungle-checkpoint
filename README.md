@@ -27,7 +27,7 @@ Tu voudrais bien voir l'ensemble de toutes tes plantes maintenant, n'est-ce pas 
 2. Toutes les routes concernant les plantes doivent être préfixées par `/plants`.
 3. Tu as maintenant besoin du PlantController correspondant pour obtenir toutes les plantes. N'oublie pas de créer le PlantManager également.
 4. Une fois ces deux fichiers créés et configurés, tu peux vérifier avec Postman, Insomnia ou Thunder que tu obtiens la liste de tes plantes depuis la base de données en accédant en GET à la route http://localhost:5000/plants
-5. Les plantes sont associées à une catégorie. Donc il te faut le nom de cette catégorie associée à chaque plante. Écris ta propre méthode findAll() dans PlantManager avec un INNER JOIN pour obtenir le nom de la catégorie en même temps que les autres informations pour chaque élément de la collection. Le nom de la categorie devra apparaitre sous un champ nommé `category`
+5. Les plantes sont associées à une catégorie. Donc il te faut le nom de cette catégorie associée à chaque plante. Écris ta propre méthode findAll() (dont tu trouveras un modèle dans le fichier `AbstractManager` dans PlantManager avec un INNER JOIN pour obtenir le nom de la catégorie en même temps que les autres informations pour chaque élément de la collection. Le nom de la categorie devra apparaitre sous un champ nommé `category`
 
 **FRONTEND**
 1. Tu dois créér un système de routage pour permettre à l'utilisateur de consulter 3 pages :
@@ -46,7 +46,7 @@ Tu voudrais bien voir l'ensemble de toutes tes plantes maintenant, n'est-ce pas 
 
     **ASTUCE**: Pour accéder à l'url du back, tu peux utiliser la variable d'environnement mise à disposition : `import.meta.env.VITE_BACKEND_URL`
 
-3. Utilise le composant PlantItem pour afficher la vignette de chaque plante. N'oublie pas de lui passer les props.
+3. Utilise le composant PlantItem pour afficher la vignette de chaque plante. N'oublie pas de lui passer la props nommée `plant`.
 
 ## J'aime bien Monstera, tu peux m'en dire plus ?
 Il est temps d'avoir plus de détails sur chacune de tes plantes.
@@ -61,7 +61,7 @@ Il est temps d'avoir plus de détails sur chacune de tes plantes.
 1. Dans le composant PlantDetail, utilise un useParams, useEffet, un fetch et un useState pour accéder à ta route du backend afin de récupérer et stocker les informations de ta plante choisie.
 2. Affiche les informations aux endroits dédiés
 
-**NB** : Le composant `<Care>` permet d'afficher les besoins en soleil et en eau et doivent recevoir la bonne information sur la props `amount`
+**ASTUCE** : Le composant `<Care>` permet d'afficher les besoins en soleil et en eau et doivent recevoir la bonne information sur la props `amount`
 
 ## BONUS #1
 ## Je veux une nouvelle plante !
