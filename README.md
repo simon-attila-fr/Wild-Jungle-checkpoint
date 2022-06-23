@@ -20,18 +20,29 @@ At the end, the shop should be able to show a list of plants, filter the list by
 
 ### Where are my plants ?
 Let's start with the **backend**. 
+
 1. You have to make the route to be able to browse the plants collection.
 2. All the routes about plants should be prefixed by /plants
 3. You need now the corresponding PlantController to get all plants. Don't forget to make the corresponding PlantManager.
 4. You can test with Postman, Insomnia or Thunder that you get your plants from the database
 5. Plants have a category associated. So, in the plants collection, you need to have the name of that category. Write your own findAll() method in your PlantManager with an INNER JOIN to get the category name along with all plants.
 
+Let's go to the **frontend**. 
+6. Create a routing system to allow user to consult 3 pages : 
+ - the root "/" to show the PlantList page
+ - the "/plants/add" to show the PlantAdd page 
+ - a dynamic path prefixed by "/plants/" to access to the PlantDetail page (a detail page for a specific plant)
 
-https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
+7. In the PlantList page, you'll have to recover data from your backend to display all the plants.
+ - For that, get all the plants data with your favorite method when the component will mount.
+ - Render a PlantItem component for each plant. Don't forget to pass him the props.
+ - Make this component clickable. It should refer to the individual page of this plant.  
+ 
+8. **BONUS** Manage your plants list by category :
+ - Get all categories information with a call to an API. 
+ - Display the category name in the select options.
+ - Create a method to filter the plants list depanding on the category selected.
 
-https://images.unsplash.com/photo-1459156212016-c812468e2115?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=705&q=80
-
-https://images.unsplash.com/photo-1512428813834-c702c7702b78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
 
 ### Project Initialization
 
