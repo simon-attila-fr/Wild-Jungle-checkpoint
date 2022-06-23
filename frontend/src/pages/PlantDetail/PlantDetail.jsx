@@ -6,6 +6,7 @@ export default function PlantDetail() {
   return (
     <div id="wj-plant-detail">
       <div className="image half">
+        {/* indiquer source de l'image */}
         <img src="" alt="" />
       </div>
 
@@ -16,10 +17,12 @@ export default function PlantDetail() {
           <div className="category">Category : {/* nom de la catégorie */}</div>
 
           <div className="light">
+            {/* indiquer dans amount la quantité */}
             Besoin en lumière : <Care type="sun" amount="" />
           </div>
 
           <div className="water">
+            {/* indiquer dans amount la quantité */}
             Besoin en eau : <Care type="water" amount="" />
           </div>
 
