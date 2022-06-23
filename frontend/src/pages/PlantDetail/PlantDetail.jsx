@@ -1,40 +1,29 @@
 import Care from "@components/Care/Care";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 import "./PlantDetail.css";
 
 export default function PlantDetail() {
-  const { id } = useParams();
-  const [plant, setPlant] = useState({});
-
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/plants/${id}`)
-      .then((res) => res.json())
-      .then((data) => setPlant(data));
-  }, []);
-
   return (
     <div id="wj-plant-detail">
       <div className="image half">
-        <img src={plant.image} alt="" />
+        <img src="" alt="" />
       </div>
 
       <div className="detail half">
-        <h1>{plant.name}</h1>
+        <h1 className="plant_name">{/* Nom de la plante */}</h1>
 
         <div className="data">
-          <div className="category">Category : {plant.category}</div>
+          <div className="category">Category :</div>
 
           <div className="light">
-            Besoin en lumière : <Care type="sun" amount={plant.light} />
+            Besoin en lumière : <Care type="sun" amount="" />
           </div>
 
           <div className="water">
-            Besoin en eau : <Care type="water" amount={plant.water} />
+            Besoin en eau : <Care type="water" amount="" />
           </div>
 
-          <div className="price">Prix: {plant.price}€</div>
+          <div className="price">Prix: €</div>
         </div>
 
         <div className="center">

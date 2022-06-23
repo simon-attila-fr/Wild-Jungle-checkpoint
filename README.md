@@ -43,6 +43,10 @@ Let's go to the **frontend**.
  - Display the category name in the select options.
  - Create a method to filter the plants list depanding on the category selected.
 
+### I want a new plant!
+It's time to grow your collection.
+1. You will find a form already in place on the
+
 
 ### Project Initialization
 
