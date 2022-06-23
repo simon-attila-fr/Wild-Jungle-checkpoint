@@ -7,7 +7,7 @@ export default function PlantList() {
     <div id="wj-shopping-list">
       <h1>Mes plantes Wild</h1>
 
-      {/* Partie BONUS */}
+      {/* Partie BONUS #2 */}
       <div className="filter">
         <select className="plantadd_input select" name="category" id="category">
           <option value="0">Tous les types de plantes</option>

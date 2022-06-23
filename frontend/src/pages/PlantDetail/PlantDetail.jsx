@@ -17,12 +17,12 @@ export default function PlantDetail() {
           <div className="category">Category : {/* nom de la catégorie */}</div>
 
           <div className="light">
-            {/* indiquer dans amount la quantité */}
+            {/* indiquer dans amount la quantité de lumière */}
             Besoin en lumière : <Care type="sun" amount="" />
           </div>
 
           <div className="water">
-            {/* indiquer dans amount la quantité */}
+            {/* indiquer dans amount la quantité d'eau */}
             Besoin en eau : <Care type="water" amount="" />
           </div>
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./PlantAdd.css";
 
+// Partie BONUS #1
 export default function PlantAdd() {
   const [categories, setCategories] = useState([]);
 
@@ -13,7 +14,7 @@ export default function PlantAdd() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Code de gestion de l'envoi du formulaire
+    // Code de gestion de l'envoi du formulaire en POST
   };
 
   return (
