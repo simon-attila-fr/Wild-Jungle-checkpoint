@@ -40,7 +40,8 @@ Tu voudrais bien voir l'ensemble de toutes tes plantes !
  - Génère un composant PlantItem pour chaque plante. N'oublie pas de lui passer les props.
  - Rend ce composant cliquable. Il doit renvoyer à la page individuelle de cette plante.  
  
-8. **BONUS** Gére ta liste de plantes en les filtrant par catégorie :
+8. **BONUS**.
+  Gére ta liste de plantes en les filtrant par catégorie :
  - Récupère toutes les données sur les catégories via un appel à une API. 
  - Affiche le nom de la catégorie dans les options du select
  - Créé une méthode pour filtrer la liste des plantes en fonction de la catégorie sélectionnée
