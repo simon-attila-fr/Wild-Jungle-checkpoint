@@ -1,9 +1,31 @@
-## Concept
+## Checkpoint 3 // Javascript React
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+This Repo is meant to be the JS CheckPoint 3 with all the main concepts learned in Wild Code School.
 
-## Setup & Use
+## Setup
+1. Clone this repo, enter it
+2. Run command `npm run setup`
+3. Go in frontend directory and make a .env file from the .env.sample file
+4. Go in backend directory and make a .env file from the .env.sample file
+5. In the backend .env file, fill the DB_USER and DB_PASSWORD with your MySQL credentials 
+6. Still in the backend directory run `node migrate`
+7. Go back in the root directory and run `npm run dev`
+8. Go on your favorite browser on http://localhost:3000
+
+## Introduction
+Wild Jungle is a small e-chop to buy Wild Plants to make your rooms and balconies wilder
+For now, data are available in the database, but nothing displays on screen.
+
+At the end, the shop should be able to show a list of plants, filter the list by category, show a single plant details, and having a form to add a new plant
+
+### Where are my plants ?
+Let's start with the **backend**. 
+1. You have to make the route to be able to browse the plants collection.
+2. All the routes about plants should be prefixed by /plants
+3. You need now the corresponding PlantController to get all plants. Don't forget to make the corresponding PlantManager.
+4. You can test with Postman, Insomnia or Thunder that you get your plants from the database
+5. Plants have a category associated. So, in the plants collection, you need to have the name of that category. Write your own findAll() method in your PlantManager with an INNER JOIN to get the category name along with all plants.
+
 
 https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
 
