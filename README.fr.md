@@ -28,7 +28,8 @@ Tu voudrais bien voir l'ensemble de toutes tes plantes !
 4. Tu peux vérifier avec Postman, Insomnia ou Thunder que tu obtiens tes plantes depuis la base de données.
 5. Les plantes sont associées à une catégorie. Donc il nous faut le nom de cette catégorie associée à chaque plante. Écris ta propre méthode findAll() dans PlantManager avec un INNER JOIN pour obtenir le nom de la catégorie en même temps que les autres informations pour chaque éléments de la collection.
 
-**FRONTEND**
+**FRONTEND**.
+
 6. Tu dois créér un système de routage pour permettre à l'utilisateur de consulter 3 pages : 
  - "/"  lui affichera la page PlantList
  - "/plants/add"  lui affichera la page PlantAdd 
