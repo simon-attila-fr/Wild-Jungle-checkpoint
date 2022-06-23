@@ -1,8 +1,14 @@
-.lmj-shopping-list {
+#wj-shopping-list {
   width: 100%;
 }
 
-.lmj-plant-list {
+#wj-shopping-list h1 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.wj-plant-list {
   list-style-type: none;
   padding: 32px;
   display: flex;

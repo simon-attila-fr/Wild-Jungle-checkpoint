@@ -1,24 +1,25 @@
-import Banner from "@components/Banner";
-import Footer from "@components/Footer";
-import PlantDetail from "@components/PlantDetail";
-import PlantAdd from "@pages/PlantAdd";
-import PlantList from "@pages/PlantList";
+import Banner from "@components/Banner/Banner";
+import Footer from "@components/Footer/Footer";
+import PlantDetail from "@pages/PlantDetail/PlantDetail";
+import PlantAdd from "@pages/PlantAdd/PlantAdd";
+import PlantList from "@pages/PlantList/PlantList";
 import { Routes, Route } from "react-router-dom";
 
-import "./styles/index.css";
-import "./styles/Layout.css";
+import "./App.css";
 
 function App() {
   return (
-    <div>
+    <div className="wj-layout">
       <Banner />
-      <div className="lmj-layout-inner">
+
+      <main>
         <Routes>
           <Route path="/" element={<PlantList />} />
           <Route path="/plants/add" element={<PlantAdd />} />
           <Route path="/plants/:id" element={<PlantDetail />} />
         </Routes>
-      </div>
+      </main>
+
       <Footer />
     </div>
   );
