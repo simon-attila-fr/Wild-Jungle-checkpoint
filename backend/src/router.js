@@ -4,7 +4,7 @@ const { CategoryController } = require("./controllers");
 
 const router = express.Router();
 
-/** Ajoute tes routes /plants ici *
+/** Ajoute tes routes /plants ici */
 
 router.get("/categories", CategoryController.browse);
 
