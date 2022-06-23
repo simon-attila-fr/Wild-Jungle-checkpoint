@@ -5,11 +5,6 @@ CREATE DATABASE greenshop
 
 USE greenshop;
 
-CREATE TABLE `user` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `full_name` varchar(255) NOT NULL
-) DEFAULT CHARACTER SET = 'utf8';
-
 CREATE TABLE `plant` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255) NOT NULL ,
@@ -20,25 +15,13 @@ CREATE TABLE `plant` (
   `image` varchar(255) DEFAULT ""
 ) DEFAULT CHARACTER SET = 'utf8';
 
-CREATE TABLE `plant_user` (
-  `user_id` int NOT NULL ,
-  `plant_id` int NOT NULL
-) DEFAULT CHARACTER SET = 'utf8';
-
 CREATE TABLE `category` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255) NOT NULL
 ) DEFAULT CHARACTER SET = 'utf8';
 
-ALTER TABLE `plant_user` ADD FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
-
-ALTER TABLE `plant_user` ADD FOREIGN KEY (`plant_id`) REFERENCES `plant` (`id`);
 
 ALTER TABLE `plant` ADD FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
-
-
-
-INSERT INTO user (`full_name`) VALUES ("Karl"), ("Alice");
 
 
 INSERT INTO category (name) VALUES ("Classique"),("Extérieur"), ('Plante grasse');

@@ -10,8 +10,17 @@
 
 .wj-plant-list {
   list-style-type: none;
-  padding: 32px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.filter {
+  padding: 0 100px;
+}
+
+.plantadd_input.select {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 16px;
 }

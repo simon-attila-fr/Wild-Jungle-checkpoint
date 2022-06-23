@@ -2,7 +2,14 @@ import { useEffect, useState } from "react";
 import "./PlantAdd.css";
 
 export default function PlantAdd() {
-  const [form, setForm] = useState([]);
+  const [form, setForm] = useState({
+    name: "",
+    category_id: 0,
+    water: "",
+    sun: "",
+    price: "",
+    image: "",
+  });
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -48,18 +55,20 @@ export default function PlantAdd() {
           />
         </label>
 
-        <label className="plantadd_label" htmlFor="name">
+        <label className="plantadd_label" htmlFor="category">
           Catégorie
           <select
             className="plantadd_input"
-            name="category"
+            name="category_id"
             id="category"
             value={form.category_id}
             onChange={handleChange}
           >
             <option value="0">Choisir une catégorie... </option>
             {categories.map((category) => (
-              <option value={category.id}>{category.name}</option>
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
             ))}
           </select>
         </label>
