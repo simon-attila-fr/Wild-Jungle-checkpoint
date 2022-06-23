@@ -29,7 +29,20 @@ Tu voudrais bien voir l'ensemble de toutes tes plantes !
 5. Les plantes sont associées à une catégorie. Donc il nous faut le nom de cette catégorie associée à chaque plante. Écris ta propre méthode findAll() dans PlantManager avec un INNER JOIN pour obtenir le nom de la catégorie en même temps que les autres informations pour chaque éléments de la collection.
 
 **FRONTEND**
+6. Tu dois créér un système de routage pour permettre à l'utilisateur de consulter 3 pages : 
+ - "/"  lui affichera la page PlantList
+ - "/plants/add"  lui affichera la page PlantAdd 
+ - un chemin dynamique préfixé par "/plants/" lui permettra d'accéder à la page PlantDetail (une page de détail pour une plante spécifique).
 
+7. Dans la page PlantList, récupére les données du backend pour afficher toutes les plantes. Pour cela:
+ - Récupére toutes les données des plantes avec ta méthode préférée, lors du montage du composant.
+ - Génère un composant PlantItem pour chaque plante. N'oublie pas de lui passer les props.
+ - Rend ce composant cliquable. Il doit renvoyer à la page individuelle de cette plante.  
+ 
+8. **BONUS** Gére ta liste de plantes en les filtrant par catégorie :
+ - Récupère toutes les données sur les catégories via un appel à une API. 
+ - Affiche le nom de la catégorie dans les options du select
+ - Créé une méthode pour filtrer la liste des plantes en fonction de la catégorie sélectionnée
 
 ## J'aime bien Monstera, tu peux m'en dire plus ?
 Il est temps d'avoir plus de détails sur chacune de tes plantes.
