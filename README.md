@@ -3,18 +3,19 @@
 Ce dépôt est le CheckPoint 3 Javascript/Express/React abordant les concepts principaux appris dans la Wild Code School lors du bootcamp FullTime.
 
 ## Configuration
-1. Clonez ce repo, entrez dans le répertoire
-2. Exécutez la commande `npm run setup`
-3. Allez dans le répertoire `frontend` et créez un fichier .env à partir du fichier .env.sample.
-4. Allez dans le répertoire `backend` et créez un fichier .env à partir du fichier .env.sample.
-5. Dans le fichier .env du **backend**, remplissez les champs DB_USER et DB_PASSWORD avec vos informations d'identification MySQL. Ne touchez pas au nom de la base de données.
-6. Toujours dans le répertoire `backend`, exécutez la commande `node migrate`.
-7. Retournez dans le répertoire racine et exécutez `npm run dev`.
-8. Allez sur votre navigateur préféré sur http://localhost:3000
+1. Clone ce repo et entre dans le répertoire
+2. Créé une branche sous le format Prenom_NOM
+3. Exécute la commande `npm run setup`
+4. Va dans le répertoire `frontend` et créé un fichier .env à partir du fichier .env.sample.
+5. Va dans le répertoire `backend` et créé un fichier .env à partir du fichier .env.sample.
+6. Dans le fichier .env du **backend**, remplis les champs DB_USER et DB_PASSWORD avec tes informations d'identification MySQL. Ne touche pas au nom de la base de données.
+7. Toujours dans le répertoire `backend`, exécute la commande `node migrate`.
+8. Retourne dans le répertoire racine et exécute `npm run dev`.
+9. Va sur ton navigateur préféré sur http://localhost:3000
 
 ## Introduction
 Wild Jungle est une petite boutique en ligne pour acheter des plantes sauvages pour rendre vos chambres et balcons plus Wild.
-Pour l'instant, les données sont disponibles dans la base de données, mais rien ne s'affiche à l'écran.
+Pour le moment, les données sont disponibles dans la base de données, mais rien ne s'affiche à l'écran.
 
 À terme, la boutique devrait être capable d'afficher une liste de plantes, d'afficher les détails d'une seule plante, de filtrer la liste par catégorie et d'avoir un formulaire pour ajouter une nouvelle plante.
 
@@ -37,7 +38,9 @@ Tu voudrais bien voir l'ensemble de toutes tes plantes maintenant, n'est-ce pas 
 
     `/plants/add` affichera la page PlantAdd
 
-    **ASTUCE**: Tu auras besoin du package `react-router-dom`
+    **ASTUCE** : Tu auras besoin du package `react-router-dom`
+
+    **NB** : Les composants de page sont déjà créés dans le répertoire `pages`
 
 2. Dans le composant PlantList, récupére les données du backend lors du montage du composant pour afficher toutes les plantes.
 
