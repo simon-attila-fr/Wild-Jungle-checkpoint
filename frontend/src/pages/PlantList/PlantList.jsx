@@ -47,7 +47,8 @@ export default function PlantList() {
       <div className="wj-plant-list">
         {plantes
           .filter((e) =>
-            filterSelection === 0 ? e : e.category_id === filterSelection
+            // eslint-disable-next-line eqeqeq
+            filterSelection == 0 ? e : e.category_id == filterSelection
           )
           .map((plant) => (
             <Link to={`/plants/${plant.id}`}>
