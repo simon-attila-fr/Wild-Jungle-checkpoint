@@ -7,6 +7,7 @@ const router = express.Router();
 /** Ajoute tes routes /plants ici */
 router.get("/plants", PlantsController.browse);
 router.get("/plants/:id", PlantsController.read);
+router.post("/plants", PlantsController.add);
 
 router.get("/categories", CategoryController.browse);
 

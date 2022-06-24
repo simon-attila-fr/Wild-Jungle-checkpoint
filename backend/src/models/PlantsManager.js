@@ -5,8 +5,15 @@ class PlantsManager extends AbstractManager {
 
   insert(plant) {
     return this.connection.query(
-      `insert into ${PlantsManager.table} (title) values (?)`,
-      [plant.title]
+      `insert into ${PlantsManager.table} (name, category_id, light, water, price, image) values (?, ?, ?, ?, ?, ?)`,
+      [
+        plant.name,
+        plant.category_id,
+        plant.light,
+        plant.water,
+        plant.price,
+        plant.image,
+      ]
     );
   }
 }
