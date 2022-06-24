@@ -39,15 +39,14 @@ export default function PlantAdd() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, categoryId, water, light, price, image);
     axios
       .post("http://localhost:5000/plants", {
-        name: name,
-        categoryId: categoryId,
-        light: light,
-        water: water,
-        price: price,
-        image: image
+        name,
+        categoryId,
+        light,
+        water,
+        price,
+        image,
       })
       // eslint-disable-next-line func-names
       .then(function (response) {
@@ -88,10 +87,7 @@ export default function PlantAdd() {
           >
             <option value="0">Choisir une catégorie... </option>
             {categories.map((category) => (
-              <option
-                key={category.id}
-                value={category.id}
-              >
+              <option key={category.id} value={category.id}>
                 {category.name}
               </option>
             ))}
