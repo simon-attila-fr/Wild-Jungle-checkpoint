@@ -15,19 +15,6 @@
   justify-content: center;
 }
 
-.wj-plant-list-card {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.wj-plant-list-card img {
-  max-width: 50%;
-}
-
 .filter {
   padding: 0 100px;
 }
