@@ -1,7 +1,16 @@
+import React, { useState } from "react";
+import axios from "axios";
 import "./PlantList.css";
 
 export default function PlantList() {
   /* Ajouter ici les méthodes nécéssaires pour récupérer de la donnée du backend et la stocker dans le front */
+  const [plantes, setPlantes] = useState([]);
+
+  React.useEffect(() => {
+    axios.get("http://localhost:5000/plants").then((response) => {
+      setPlantes(response.data);
+    });
+  }, []);
 
   return (
     <div id="wj-shopping-list">
@@ -16,7 +25,14 @@ export default function PlantList() {
       </div>
 
       <div className="wj-plant-list">
-        {/* Ici le code d'affichage de la liste des plantes */}
+        {plantes.map((plant) => (
+          <div className="wj-plant-list-card">
+            <img src={plant.image} alt={`This is ${plant.name}`} />
+            <li key={plant.id}>
+              <h3>{plant.name}</h3>
+            </li>
+          </div>
+        ))}
       </div>
     </div>
   );

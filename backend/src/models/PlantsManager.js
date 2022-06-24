@@ -5,7 +5,7 @@ class PlantsManager extends AbstractManager {
 
   findAll() {
     return this.connection.query(
-      `select *, c.name as category from  ${this.table} inner join category as c on plant.category_id=c.id`
+      `select p.*, c.name as category from  ${this.table} as p inner join category as c on p.category_id=c.id`
     );
   }
 
