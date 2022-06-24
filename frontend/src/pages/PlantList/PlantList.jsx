@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./PlantList.css";
 import PlantItem from "@components/PlantItem/PlantItem";
 
@@ -36,7 +37,9 @@ export default function PlantList() {
 
       <div className="wj-plant-list">
         {plantes.map((plant) => (
-          <PlantItem plant={plant} />
+          <Link to={`/plants/${plant.id}`}>
+            <PlantItem key={plant.id} plant={plant} />
+          </Link>
         ))}
       </div>
     </div>

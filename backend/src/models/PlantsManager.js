@@ -3,6 +3,12 @@ const AbstractManager = require("./AbstractManager");
 class PlantsManager extends AbstractManager {
   static table = "plant";
 
+  find(id) {
+    return this.connection.query(
+      `select p.*, c.name as category from  ${this.table} as p inner join category as c on p.category_id=c.id where p.id = ?`,
+      [id]);
+  }
+
   findAll() {
     return this.connection.query(
       `select p.*, c.name as category from  ${this.table} as p inner join category as c on p.category_id=c.id`

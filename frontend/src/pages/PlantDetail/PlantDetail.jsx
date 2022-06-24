@@ -1,32 +1,41 @@
-import Care from "@components/Care/Care";
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import Care from "../../components/Care/Care";
 
 import "./PlantDetail.css";
 
 export default function PlantDetail() {
+  const [plant, setPlant] = useState([]);
+  const { id } = useParams();
+
+  React.useEffect(() => {
+    axios.get(`http://localhost:5000/plants/${id}`).then((response) => {
+      setPlant(response.data);
+    });
+  }, []);
+
   return (
     <div id="wj-plant-detail">
       <div className="image half">
-        {/* indiquer source de l'image */}
-        <img src="" alt="" />
+        <img src={plant.image} alt={`This is ${plant.name}`} />
       </div>
 
       <div className="detail half">
-        <h1>{/* nom de la plante */}</h1>
+        <h1>{plant.name}</h1>
 
         <div className="data">
-          <div className="category">Category : {/* nom de la catégorie */}</div>
+          <div className="category">Category : {plant.category}</div>
 
           <div className="light">
-            {/* indiquer dans amount la quantité de lumière */}
-            Besoin en lumière : <Care type="sun" amount="" />
+            Besoin en lumière : <Care type="sun" amount={plant.light} />
           </div>
 
           <div className="water">
-            {/* indiquer dans amount la quantité d'eau */}
-            Besoin en eau : <Care type="water" amount="" />
+            Besoin en eau : <Care type="water" amount={plant.water} />
           </div>
 
-          <div className="price">Prix: {/* prix */}€</div>
+          <div className="price">Prix: {plant.price}€</div>
         </div>
 
         <div className="center">
