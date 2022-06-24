@@ -5,9 +5,13 @@ import "./PlantList.css";
 import PlantItem from "@components/PlantItem/PlantItem";
 
 export default function PlantList() {
-  /* Ajouter ici les méthodes nécéssaires pour récupérer de la donnée du backend et la stocker dans le front */
   const [plantes, setPlantes] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [filterSelection, setFilterSelection] = useState([]);
+
+  function handleFilter(event) {
+    setFilterSelection(event.target.value);
+  }
 
   React.useEffect(() => {
     axios.get("http://localhost:5000/plants").then((response) => {
@@ -27,7 +31,12 @@ export default function PlantList() {
 
       {/* Partie BONUS #2 */}
       <div className="filter">
-        <select className="plantadd_input select" name="category" id="category">
+        <select
+          className="plantadd_input select"
+          name="category"
+          id="category"
+          onChange={handleFilter}
+        >
           <option value="0">Tous les types de plantes</option>
           {categories.map((categorie) => (
             <option value={categorie.id}> {categorie.name}</option>
@@ -36,11 +45,15 @@ export default function PlantList() {
       </div>
 
       <div className="wj-plant-list">
-        {plantes.map((plant) => (
-          <Link to={`/plants/${plant.id}`}>
-            <PlantItem key={plant.id} plant={plant} />
-          </Link>
-        ))}
+        {plantes
+          .filter((e) =>
+            filterSelection === 0 ? e : e.category_id === filterSelection
+          )
+          .map((plant) => (
+            <Link to={`/plants/${plant.id}`}>
+              <PlantItem key={plant.id} plant={plant} />
+            </Link>
+          ))}
       </div>
     </div>
   );
