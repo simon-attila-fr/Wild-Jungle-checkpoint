@@ -21,7 +21,7 @@ class PlantsManager extends AbstractManager {
       `insert into ${PlantsManager.table} (name, category_id, light, water, price, image) values (?, ?, ?, ?, ?, ?)`,
       [
         plant.name,
-        plant.category_id,
+        plant.categoryId,
         plant.light,
         plant.water,
         plant.price,

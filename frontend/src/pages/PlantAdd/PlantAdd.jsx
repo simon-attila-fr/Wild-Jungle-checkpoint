@@ -8,7 +8,7 @@ export default function PlantAdd() {
   const [name, setName] = useState("");
   const [categoryId, setCategoryId] = useState("");
   const [water, setWater] = useState("");
-  const [sun, setSun] = useState("");
+  const [light, setLight] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
 
@@ -18,8 +18,8 @@ export default function PlantAdd() {
   function handleWater(event) {
     setWater(event.target.value);
   }
-  function handleSun(event) {
-    setSun(event.target.value);
+  function handleLight(event) {
+    setLight(event.target.value);
   }
   function handlePrice(event) {
     setPrice(event.target.value);
@@ -39,14 +39,15 @@ export default function PlantAdd() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(name, categoryId, water, light, price, image);
     axios
-      .post("http://localhost:5000/plant", {
-        name,
-        categoryId,
-        water,
-        sun,
-        price,
-        image,
+      .post("http://localhost:5000/plants", {
+        name: name,
+        categoryId: categoryId,
+        light: light,
+        water: water,
+        price: price,
+        image: image
       })
       // eslint-disable-next-line func-names
       .then(function (response) {
@@ -79,13 +80,17 @@ export default function PlantAdd() {
 
         <label className="plantadd_label" htmlFor="category">
           Catégorie
-          <select className="plantadd_input" name="category_id" id="category">
+          <select
+            className="plantadd_input"
+            name="category_id"
+            id="category"
+            onChange={handleCategory}
+          >
             <option value="0">Choisir une catégorie... </option>
             {categories.map((category) => (
               <option
                 key={category.id}
                 value={category.id}
-                onClick={handleCategory}
               >
                 {category.name}
               </option>
@@ -112,8 +117,8 @@ export default function PlantAdd() {
             id="sun"
             name="sun"
             type="number"
-            value={sun}
-            onChange={handleSun}
+            value={light}
+            onChange={handleLight}
           />
         </label>
 
